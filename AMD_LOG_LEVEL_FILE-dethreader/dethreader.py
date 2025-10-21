@@ -61,7 +61,7 @@ def dethread(src_file: str, untagged_policy: str = next(iter(kUntaggedPolicy.key
 
     # first group ends on a timestamp right before [pid ...] section
     matcher = re.compile(
-        "^(.*?s\:\s)(\[pid:\s*(\d+)\s+tid:\s*(?:0x)?([\da-fA-F]+)\]\s*)(.*)$"
+        r"^(.*?s\:\s)(\[pid:\s*(\d+)\s+tid:\s*(?:0x)?([\da-fA-F]+)\]\s*)(.*)$"
     )
     log = {}  # pid->tid->[entries...]
     last_pid, last_tid = -1, -1
